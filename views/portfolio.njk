@@ -1,0 +1,51 @@
+{% extends "layout.njk" %}
+{% block head %}
+    <title>Portfolio - Modulo 03</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    {% endblock %}
+    {% block content %}
+    <div id="wrapper">
+        <h1>
+            Aulas
+        </h1>
+    </div>
+    {% for item in items %}
+        <section class="cards">
+            <div class="card" id="{{item.id}}">
+                <div class="card__image-container">
+                    <img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" alt="Imagem de {{item.title}}"></div>
+                    <div class="card__content">
+                        <p>{{item.title}}</p>
+                    </div>
+                    <div class="card__info">
+                        <p>{{item.duration}}</p>
+                        <p class="card__price">{{item.price}}</p>
+                    </div>
+                </div>
+            </section>
+        {% endfor %}
+        <div class="modal-overlay">
+            <div class="modal">
+                <a class="fullscreen-modal">
+                    <i class="material-icons">fullscreen</i>
+                </a>
+                <a class="close-modal">
+                    <i class="material-icons">close</i>
+                </a>
+                <div
+                    class="modal-content">
+                    <!--Blog Aqui-->
+                    <iframe src="" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+        <div id="links-footer" class="links">
+            <a href="https://github.com/Rocketseat" target="_blank">Github</a>
+            <a href="https://www.instagram.com/rocketseat_oficial" target="_blank">Instagram</a>
+            <a href="https://pt-br.facebook.com/rocketseat/" target="_blank">Facebook</a>
+            <a href="https://www.youtube.com/c/RocketSeat" target="_blank">YouTube</a>
+        </div>
+        <script src="scripts.js"></script>
+    {% endblock %}
